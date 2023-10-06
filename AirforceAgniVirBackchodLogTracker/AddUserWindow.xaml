@@ -1,0 +1,40 @@
+﻿<Window x:Class="AirforceAgniVirBackchodLogTracker.AddUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AirforceAgniVirBackchodLogTracker"
+        mc:Ignorable="d"
+        Title="User Registration" Height="450" Width="800">
+    <Grid Name="AddUser_Grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label  Content="Username:"  Grid.Row="0" Grid.Column="0"></Label>
+        <TextBox x:Name="username_TextBox" Grid.Row="0" Grid.Column="1" Margin="20"></TextBox>
+        <Label  Content="Password:"  Grid.Row="1" Grid.Column="0"></Label>
+        <PasswordBox x:Name="user_passwordbox" Grid.Row="1" Grid.Column="1" Margin="20"></PasswordBox>
+        <Label  Content=" Verify Password:"  Grid.Row="2" Grid.Column="0"></Label>
+        <PasswordBox x:Name="user_passwordbox_Verify" Grid.Row="2" Grid.Column="2" Margin="20"></PasswordBox>
+        <Label  Name="user_Permission" Content="Permission:"  Grid.Row="3" Grid.Column="0"></Label>
+        <ComboBox Margin="20" Name="comboBox" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left" SelectionChanged="comboBox_SelectionChanged" Grid.Row="3" Grid.Column="1" >
+            <ComboBoxItem Content="Admin"/>
+            <ComboBoxItem Content="Staff"/>           
+        </ComboBox>
+        <Button Content="Add User" Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="10,130,10,0" Click="Button_Click" Background="#007ACC" Foreground="White" BorderThickness="2"/>
+
+
+
+    </Grid>
+</Window>
