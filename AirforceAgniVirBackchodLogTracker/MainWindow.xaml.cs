@@ -30,6 +30,7 @@ namespace AirforceAgniVirBackchodLogTracker
             this.ResizeMode = ResizeMode.NoResize;
             LoadImageBackground();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            AddDefaultUser();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -37,15 +38,8 @@ namespace AirforceAgniVirBackchodLogTracker
 
 
             using (SQLiteConnection connection = new SQLiteConnection(App.databasepath))
-            {
+            {               
                 
-                connection.CreateTable<User>();               
-                userList = (connection.Table<User>().ToList()).OrderBy(c => c.username).ToList();
-                if (userList.Count == 0)
-                {
-                    AddDefaultUser();
-
-                }
                 if (UsernameTextBox.Text != "" && PasswordBox.Password != "")
                 {
                     if (AuthenticateUser(UsernameTextBox.Text, PasswordBox.Password))
@@ -118,7 +112,7 @@ namespace AirforceAgniVirBackchodLogTracker
         }
 
         private void AddDefaultUser()
-        {
+        {          
             try
             {
                 User user = new User()
@@ -130,8 +124,12 @@ namespace AirforceAgniVirBackchodLogTracker
                 };
                 using (SQLiteConnection connection = new SQLiteConnection(App.databasepath))
                 {
-                    connection.CreateTable<User>();
-                    connection.Insert(user);
+                    userList = (connection.Table<User>().ToList()).OrderBy(c => c.username).ToList();
+                    if (userList.Count == 0)
+                    {
+                        connection.CreateTable<User>();
+                        connection.Insert(user);
+                    }
 
                 }
             }
