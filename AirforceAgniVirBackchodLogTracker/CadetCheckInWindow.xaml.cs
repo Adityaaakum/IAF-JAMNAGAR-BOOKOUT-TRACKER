@@ -52,7 +52,7 @@ namespace AirforceAgniVirBackchodLogTracker
             using (SQLiteConnection connection = new SQLiteConnection(App.databasepath))
             {
                 connection.CreateTable<BookOut>();
-                 bookout = connection.Table<BookOut>().FirstOrDefault(b=>b.UserID==cadet.Id);
+                 bookout = connection.Table<BookOut>().LastOrDefault(b=>b.UserID==cadet.Id);
                 
             }
             return bookout;
