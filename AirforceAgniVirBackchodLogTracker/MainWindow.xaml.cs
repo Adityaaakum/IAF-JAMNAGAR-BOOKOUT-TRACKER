@@ -57,7 +57,7 @@ namespace AirforceAgniVirBackchodLogTracker
                 }
                     else
                     {
-                        MessageBox.Show("Something Went Wrong! Please Check Your Login Details", "Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("Something Went Wrong! Please Check your Login Details", "Failure", MessageBoxButton.OK, MessageBoxImage.Error);
 
                     }
 
@@ -106,7 +106,7 @@ namespace AirforceAgniVirBackchodLogTracker
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Something Went Wrong! Please CheckYour Login Details", "Failure", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Something Went Wrong! Please Check your Login Details", "Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
         }
